@@ -41,8 +41,10 @@ pipeline
 				
 								
 		stage('Mail de confirmation') {
-                		steps { emailext(attachLog: true, body: 'ci-joint le rapport de votre Pipeline', subject: 'Rapport Pipeline devops Esprit', to: 'hamza.smari@esprit.tn')}                
-                				}
+            			steps {
+               				emailext attachLog: true, body: 'la tache a ete terminée avec succées', subject: 'Confirmation de Jenkins', to: 'esprit.devops@gmail.com'
+            				}
+            					}
 
                 
                 stage('Fin') {
