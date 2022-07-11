@@ -57,8 +57,8 @@ pipeline
         always{
             mail to: "esprit.devops@gmail.com",
             subject: "Project CD Terminé avec succés",
-            body: "***************Bonjour**************
-            La tache d'aujourd'hui a été terminée avec succés
+            body: "***************Bonjour**************/n
+            La tache d'aujourd'hui a été terminée avec succés/n
             Merci"
                 }
         }
