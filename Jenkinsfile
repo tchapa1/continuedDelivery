@@ -22,7 +22,7 @@ pipeline
 							
 				
 				
-		stage('docker') {
+		stage('Docker') {
 				steps {
 					script{
 						sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml"
@@ -31,7 +31,7 @@ pipeline
 				}
 				
 						
-		stage('docker-registry') {
+		stage('Docker-registry') {
 				steps {
 					script{
 						sh "ansible-playbook Ansible/docker-registry.yml -i Ansible/inventory/host.yml"
@@ -54,10 +54,10 @@ pipeline
 		}
 		
     post{
-        always{
+        failure{
             mail to: "esprit.devops@gmail.com",
-            subject: "Project CD Terminé avec succés",
-            body: "***************Bonjour************** La tache d'aujourd'hui a été terminée avec succés Merci"
+            subject: "Project CD Terminé avec un probleme ",
+            body: "***************Bonjour************** Verifiez votre Pipeline PIPE1 ,vous avez un probleme "
                 }
         }
 }				
